@@ -31,11 +31,12 @@ public class BookService {
     // 반환 객체로 비교하는 것도 가능
     @PostAuthorize("returnObject.writer == authentication.name")
     public Book getBook(Long id) {
-        return bookRepository.findOne(id);
+        return bookRepository.findById(id)
+                             .orElse(null);
     }
 
     // 인자나 인자의 속성의 비교하는 것도 가능
-    @PreAuthorize ("hasRole('ROLE_WRITE') && #book.writer == authentication.name")
+    @PreAuthorize("hasRole('ROLE_WRITE') && #book.writer == authentication.name")
     @Transactional
     public void changeBook(Book book) {
         Assert.notNull(book.getId(), "book.id must not be null");
@@ -43,9 +44,9 @@ public class BookService {
     }
 
     // bean 자체를 주입받는 것도 가능 with SpEL. "?." = Null safety
-    @PreAuthorize("@bookRepository.findOne(#id)?.writer == authentication?.name")
+    @PreAuthorize("@bookRepository.findById(#id).orElse(null)?.writer == authentication?.name")
     @Transactional
     public void deleteBookById(Long id) {
-        bookRepository.delete(id);
+        bookRepository.deleteById(id);
     }
 }
