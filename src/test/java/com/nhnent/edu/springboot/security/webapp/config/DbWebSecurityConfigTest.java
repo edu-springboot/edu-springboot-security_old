@@ -43,6 +43,12 @@ public class DbWebSecurityConfigTest {
     }
 
     @Test
+    public void login_fail() throws Exception {
+        mockMvc.perform(formLogin().user("admin").password("admin1"))
+               .andExpect(redirectedUrl("/login?error"));
+    }
+
+    @Test
     @WithMockUser("anyone")
     public void hello_byUser() throws Exception {
         mockMvc
