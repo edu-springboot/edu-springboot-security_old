@@ -1,4 +1,4 @@
-package com.example.webappsecuritysample;
+package com.nhn.edu.springboot.security.webapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

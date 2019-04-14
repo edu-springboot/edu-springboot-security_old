@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp.book;
+package com.nhn.edu.springboot.security.webapp.book;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;

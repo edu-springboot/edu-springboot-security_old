@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp;
+package com.nhn.edu.springboot.security.webapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

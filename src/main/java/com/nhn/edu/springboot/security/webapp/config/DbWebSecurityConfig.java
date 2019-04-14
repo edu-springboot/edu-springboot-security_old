@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp.config;
+package com.nhn.edu.springboot.security.webapp.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp.book;
+package com.nhn.edu.springboot.security.webapp.book;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
