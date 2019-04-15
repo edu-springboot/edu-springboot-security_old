@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp.config;
+package com.nhn.edu.springboot.security.webapp.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,6 +40,12 @@ public class DbWebSecurityConfigTest {
         mockMvc.perform(formLogin().user("admin").password("admin"))
                .andExpect(authenticated().withUsername("admin"))
         ;
+    }
+
+    @Test
+    public void login_fail() throws Exception {
+        mockMvc.perform(formLogin().user("admin").password("admin1"))
+               .andExpect(redirectedUrl("/login?error"));
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.nhnent.edu.springboot.security.webapp.book;
+package com.nhn.edu.springboot.security.webapp.book;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
